@@ -3,8 +3,12 @@ import Hero from './components/Hero'
 import Featured from './components/Featured'
 import Collection from './components/Collection'
 import CTA from './components/CTA'
+import Reviews from './components/Reviews'
+import BlogList from './components/BlogList'
+import { messages } from './i18n'
 
 function App() {
+  const t = messages['en']
   return (
     <div className="min-h-screen text-black bg-white">
       <Navbar />
@@ -13,11 +17,13 @@ function App() {
         <Featured />
         <Collection />
         <CTA />
+        <Reviews />
+        <BlogList />
         <section id="about" className="py-16 border-t border-black/5">
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-serif">A legacy of precision</h3>
-              <p className="mt-3 text-black/70">Rooted in the principality, Monaco Watch Company blends Swiss craftsmanship with Mediterranean spirit. Each piece is designed for enduring performance and timeless style.</p>
+              <h3 className="text-2xl md:text-3xl font-serif">{t.legacy_title}</h3>
+              <p className="mt-3 text-black/70">{t.legacy_copy}</p>
             </div>
             <div className="rounded-2xl overflow-hidden border border-black/10 bg-neutral-50">
               <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1200&auto=format&fit=crop" alt="Boutique" className="w-full h-full object-cover"/>
@@ -26,7 +32,7 @@ function App() {
         </section>
       </main>
       <footer className="py-10 text-center text-sm text-black/60 border-t border-black/5">
-        © {new Date().getFullYear()} Monaco Watch Company. All rights reserved.
+        © {new Date().getFullYear()} Monaco Watch Company. {t.footer_rights}
       </footer>
     </div>
   )
